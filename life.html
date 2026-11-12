@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life | Shiyao Wang</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory: '#faf8f4',
+            parchment: '#f0ece6',
+            ink: '#1c1c1c',
+            slate: '#4d6a6d',
+            ash: '#8b8680',
+            stone: '#c4bfb8',
+          },
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            body: ['"Inter"', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    body { background-color: #faf8f4; }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .nav-container {
+      transition: padding 0.3s cubic-bezier(0.33, 1, 0.68, 1),
+                  box-shadow 0.3s cubic-bezier(0.33, 1, 0.68, 1),
+                  background-color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    .nav-container.scrolled {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      background-color: rgba(250, 248, 244, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 1px 3px rgba(28,28,28,0.04), 0 4px 12px rgba(28,28,28,0.02);
+    }
+
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 0; height: 1px;
+      background-color: #4d6a6d;
+      transition: width 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    .nav-link:hover::after,
+    .nav-link:focus-visible::after { width: 100%; }
+
+    .fade-section {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.33, 1, 0.68, 1),
+                  transform 0.7s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .profile-photo { position: relative; }
+    .profile-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0 0 0 1px rgba(28,28,28,0.06);
+      pointer-events: none;
+    }
+
+    .section-divider {
+      width: 40px; height: 2px;
+      background: #4d6a6d;
+      opacity: 0.4;
+    }
+
+    .research-card {
+      border-left: 2px solid #c4bfb8;
+      transition: border-color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    .research-card:hover { border-color: #4d6a6d; }
+
+    .news-item {
+      border-left: 2px solid #c4bfb8;
+      transition: border-color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+    .news-item:hover { border-color: #4d6a6d; }
+  </style>
+</head>
+<body class="font-body text-ink antialiased">
+
+  <!-- Navigation -->
+  <nav class="nav-container fixed top-0 left-0 right-0 z-50 bg-ivory py-5">
+    <div class="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-between gap-3">
+      <a href="index.html#about" class="font-display text-xl font-semibold text-ink tracking-wide hover:text-slate transition-colors duration-300">Shiyao (Wesley) Wang</a>
+      <div class="flex flex-wrap items-center gap-4 sm:gap-8">
+        <a href="index.html#about" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">About</a>
+        <a href="index.html#research" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">Research</a>
+        <a href="index.html#news" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">News</a>
+        <a href="life.html" aria-current="page" class="nav-link text-sm font-medium text-ink hover:text-slate transition-colors duration-300">Life</a>
+        <a href="CV26-11.pdf" target="_blank" rel="noopener" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">CV</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-36 pb-24 min-h-screen">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="font-display text-4xl md:text-5xl font-semibold text-ink mb-3">Life</h1>
+      <div class="section-divider mb-10"></div>
+      <p class="text-base text-ash leading-relaxed max-w-2xl mb-12">
+        Outside of research, I enjoy playing guitar and soccer.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-3xl">
+        <section class="research-card pl-5 py-3" aria-labelledby="music-title">
+          <h2 id="music-title" class="font-display text-2xl font-semibold text-ink mb-4">Guitar &amp; Music</h2>
+          <p class="text-base text-ash leading-relaxed">
+            My favorite singers are <span class="text-ink font-medium">Cheer Chen (陈绮贞)</span> and <span class="text-ink font-medium">A-Yue (张震岳)</span>. I sometimes share videos of singing and playing guitar on Xiaohongshu.
+          </p>
+        </section>
+        <section class="research-card pl-5 py-3" aria-labelledby="soccer-title">
+          <h2 id="soccer-title" class="font-display text-2xl font-semibold text-ink mb-4">Soccer</h2>
+          <p class="text-base text-ash leading-relaxed">
+            I enjoy playing soccer and support <span class="text-ink font-medium">Real Madrid</span> and <span class="text-ink font-medium">Arsenal</span>.
+          </p>
+        </section>
+      </div>
+      <section class="mt-14 max-w-3xl" aria-labelledby="soccer-photos-title">
+        <h2 id="soccer-photos-title" class="font-display text-2xl font-semibold text-ink mb-6">Soccer Moments</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <img src="soccer1.jpg" alt="Soccer photo 1" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-2xl" />
+          <img src="soccer2.jpg" alt="Soccer photo 2" loading="lazy" class="w-full aspect-[4/3] object-cover rounded-2xl" />
+        </div>
+      </section>
+      <a href="index.html" class="inline-block mt-14 text-sm text-slate underline underline-offset-4 hover:text-ink transition-colors duration-300">&larr; Back to home</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-stone/30">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="text-xs text-ash">
+        &copy; 2026 Shiyao Wang &middot; Hong Kong University of Science and Technology
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const navContainer = document.querySelector('.nav-container');
+    window.addEventListener('scroll', () => {
+      navContainer.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  </script>
+</body>
+</html>
