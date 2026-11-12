@@ -27,7 +27,7 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
     body { background-color: #faf8f4; }
 
     body::before {
@@ -100,18 +100,6 @@
     }
     .research-card:hover { border-color: #4d6a6d; }
 
-    .download-btn {
-      transition: background-color 0.25s cubic-bezier(0.33, 1, 0.68, 1),
-                  transform 0.25s cubic-bezier(0.33, 1, 0.68, 1),
-                  box-shadow 0.25s cubic-bezier(0.33, 1, 0.68, 1);
-    }
-    .download-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 2px 8px rgba(77,106,109,0.15), 0 4px 16px rgba(77,106,109,0.08);
-    }
-    .download-btn:active { transform: translateY(0); }
-    .download-btn:focus-visible { outline: 2px solid #4d6a6d; outline-offset: 2px; }
-
     .news-item {
       border-left: 2px solid #c4bfb8;
       transition: border-color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
@@ -123,13 +111,13 @@
 
   <!-- Navigation -->
   <nav class="nav-container fixed top-0 left-0 right-0 z-50 bg-ivory py-5">
-    <div class="max-w-5xl mx-auto px-6 flex items-center justify-between">
+    <div class="max-w-5xl mx-auto px-6 flex flex-wrap items-center justify-between gap-3">
       <a href="#about" class="font-display text-xl font-semibold text-ink tracking-wide hover:text-slate transition-colors duration-300">Shiyao (Wesley) Wang</a>
-      <div class="flex items-center gap-8">
+      <div class="flex flex-wrap items-center gap-4 sm:gap-8">
         <a href="#about" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">About</a>
         <a href="#research" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">Research</a>
         <a href="#news" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">News</a>
-        <a href="#cv" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">CV & Documents</a>
+        <a href="CV0726.pdf" target="_blank" rel="noopener" class="nav-link text-sm font-medium text-ash hover:text-ink transition-colors duration-300">CV</a>
       </div>
     </div>
   </nav>
@@ -150,7 +138,7 @@
           <p class="font-display text-xl text-ash italic mb-6">王诗尧</p>
           <p class="text-base text-ash leading-relaxed max-w-xl">
             I am a PhD student in Management at the <span class="text-ink font-medium">Hong Kong University of Science and Technology (HKUST)</span> and a recipient of the <a href="https://cerg1.ugc.edu.hk/hkpfs/index.html" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">Hong Kong PhD Fellowship Scheme (HKPFS)</a>.
-            I graduated with honors from the University of Chicago's <a href="https://harris.uchicago.edu/academics/degrees/ms-computational-analysis-public-policy-mscapp" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">MSCAPP program</a> (jointly offered by the Harris School of Public Policy and the Department of Computer Science) and hold dual Bachelor's degrees in Economics and Mathematics from Renmin University of China.
+            I graduated with honors from the <a href="https://harris.uchicago.edu/academics/degrees/ms-computational-analysis-public-policy-mscapp" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200"> University of Chicago's MSCAPP</a> (jointly offered by the Harris and the CS Department) and hold dual Bachelor's degrees in <a href="http://emp.ruc.edu.cn/xmjs/xmjszj/index.htm" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">Economics and Mathematics from Renmin University of China</a>.
           </p>
           <div class="flex items-center gap-5 mt-6">
             <a href="mailto:shiyao611@uchicago.edu" class="text-sm text-slate hover:text-ink transition-colors duration-300" title="Email">
@@ -222,22 +210,26 @@
 
         <div class="research-card pl-5 py-3">
           <p class="text-base text-ink font-medium leading-relaxed">
-            Early Life Disaster Exposure and Long-term Cognitive Effects
+            Early Earthquakes and Long Term Cognitive Change
           </p>
-          <p class="text-sm text-ash mt-1">Under review
+          <p class="text-sm text-ash mt-1">Under 2nd review at <em>Economic Analysis and Policy</em></p>
+          <p class="text-sm text-ash mt-1">JCR Q1 &middot; Impact Factor: 9.0 (2025)</p>
+          <!-- Journal metrics: https://www.iit.comillas.edu/publicacion/info_revista/en/921/Economic_Analysis_and_Policy -->
         </div>
 
         <div class="research-card pl-5 py-3">
           <p class="text-base text-ink font-medium leading-relaxed">
-            Female Leadership and Stereotypes in Job Postings in Civil Service Recruitment
+            Female Leadership and Gender Stereotypes in Job Postings
           </p>
-          <p class="text-sm text-ash mt-1">Work in progress</p>
+          <p class="text-sm text-ash mt-1">With <a href="https://www.hanyu-zhu.com/home" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">Hanyu Zhu</a> and <a href="https://sites.google.com/view/junjianyi" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">Junjian Yi</a></p>
+          <p class="text-sm text-ash mt-1">Manuscript in preparation; in submission for <em>Management Science</em></p>
         </div>
 
         <div class="research-card pl-5 py-3">
           <p class="text-base text-ink font-medium leading-relaxed">
             Historical Stereotype Change is Tied to the Entry and Exit of Distributed Group Concepts
           </p>
+          <p class="text-sm text-ash mt-1">In submission for <em>Psychological Science</em></p>
           <p class="text-sm text-ash mt-1">Presented at SPSP 2026 Main Conference, Computational Psychology Preconference</p>
           <p class="text-sm text-ash mt-1">
             <a href="https://osf.io/preprints/psyarxiv/3462s_v1" target="_blank" rel="noopener" class="underline underline-offset-2 hover:text-slate transition-colors duration-200">Preprint</a>
@@ -246,6 +238,26 @@
           </p>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Ongoing Projects Section -->
+  <section id="ongoing-projects" class="py-16 fade-section">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="font-display text-3xl font-semibold text-ink mb-3">Ongoing Projects</h2>
+      <div class="section-divider mb-10"></div>
+      <div class="space-y-6 max-w-3xl">
+        <div class="research-card pl-5 py-3">
+          <p class="text-base text-ink font-medium leading-relaxed">AI and Norms</p>
+          <p class="text-sm text-ash mt-1">With <a href="https://yinglin.org/" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">Ying Lin</a></p>
+          <p class="text-sm text-ash mt-1">Data in collection</p>
+        </div>
+        <div class="research-card pl-5 py-3">
+          <p class="text-base text-ink font-medium leading-relaxed">Leadership Prototypes in 100 Years of Historical Text</p>
+          <p class="text-sm text-ash mt-1">With <a href="https://yinglin.org/" target="_blank" rel="noopener" class="text-ink font-medium underline underline-offset-2 hover:text-slate transition-colors duration-200">Ying Lin</a></p>
+          <p class="text-sm text-ash mt-1">Data in collection</p>
+        </div>
       </div>
     </div>
   </section>
@@ -286,24 +298,6 @@
 
 
 
-      </div>
-    </div>
-  </section>
-
-  <!-- CV Section -->
-  <section id="cv" class="py-16 fade-section">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="font-display text-3xl font-semibold text-ink mb-3">CV &amp; Email</h2>
-      <div class="section-divider mb-8"></div>
-      <div class="flex flex-wrap gap-4">
-        <a href="mailto:shiyao611@uchicago.edu" class="download-btn inline-flex items-center gap-2 bg-slate text-ivory px-6 py-3 rounded-lg text-sm font-medium">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          Email
-        </a>
-        <a href="CV0726.pdf" target="_blank" class="download-btn inline-flex items-center gap-2 bg-slate text-ivory px-6 py-3 rounded-lg text-sm font-medium">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-          CV
-        </a>
       </div>
     </div>
   </section>
